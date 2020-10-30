@@ -72,6 +72,7 @@ def selection_sort(items):
             # count += 1
 
     return items
+    # shout out to Ariane for her help!
 
 
 def insertion_sort(items):
