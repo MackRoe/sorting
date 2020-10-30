@@ -19,18 +19,31 @@ def is_sorted(items):
 def bubble_sort(items):
     """Sort given items by swapping adjacent items that are out of order, and
     repeating until all items are in sorted order."""
-    swapped = False
-    for i in range(len(items)-1):
-        if items[i] >= items[i+1]:
-            # Swap adjacent items that are out of order
-            items[i], items[i+1] = items[i+1], items[i]
-            swapped = True
+    # ## RECURSIVE
+    # swapped = False
+    # for i in range(len(items)-1):
+    #     if items[i] >= items[i+1]:
+    #         # Swap adjacent items that are out of order
+    #         items[i], items[i+1] = items[i+1], items[i]
+    #         swapped = True
+    #
+    # # TODO: Repeat until all items are in sorted order
+    # if swapped == True:
+    #     items = bubble_sort(items)
+    #
+    # return items
 
-    # TODO: Repeat until all items are in sorted order
-    if swapped == True:
-        items = bubble_sort(items)
+    for i in range(len(items)): # controls passes
+        for j in range(len(items) - 1):
+            # if second item is larger than first item
+            if items[j] > items[j + 1]:
+                # swap
+                temp = items[j]
+                items[j] = items[j+1]
+                items[j+1] = temp
 
     return items
+
     # TODO: Running time: ??? Why and under what conditions?
     # TODO: Memory usage: ??? Why and under what conditions?
 
